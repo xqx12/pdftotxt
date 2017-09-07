@@ -12,14 +12,16 @@
 
 #define OUTPUT_BUFFER 10
 
-int main()
+int main(int argc, char* argv[])
 {
 	FILE * fp;
 	char *buf_in, *buf_out;
 	long len_in;
 	size_t res, len_out = 0;
 
-	fp = fopen("test.pdf", "rb");
+	if(argc!=2) return -1;
+
+	fp = fopen(argv[1], "rb");
 	if (fp == NULL)
 	{
 		return -1;
